@@ -3,7 +3,7 @@
 struct Stats compute_statistics(const float* numberset, int setlength) {
     struct Stats s;
     float *maxarray;
-    float *minarrat;
+    float *minarray;
     int total = 0;
     s.average = 0;
     s.min = 0;
@@ -33,10 +33,23 @@ struct Stats compute_statistics(const float* numberset, int setlength) {
                 minarray[0] = minarray[k];
             }
         }
-        s.min = minarray[0];
-
-        
+        s.min = minarray[0];        
 }
 
-int emailAlertCallCount = 0;
-int ledAlertCallCount = 0;
+check_and_alert(maxThreshold, alerters, computedStats)
+{
+    int emailAlertCallCount = 0;
+    int ledAlertCallCount = 0;
+    struct computedStats St;
+    
+    if (st.max > maxThreshold);
+    {
+        emailAlertCallCount = emailAlertCallCount + 1;
+        ledAlertCallCount = ledAlertCallCount + 1;
+        
+    }
+    
+}
+
+
+
