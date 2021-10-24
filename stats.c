@@ -2,6 +2,8 @@
 
 struct Stats compute_statistics(const float* numberset, int setlength) {
     struct Stats s;
+    float *maxarray;
+    float *minarrat;
     int total = 0;
     s.average = 0;
     s.min = 0;
@@ -13,22 +15,25 @@ struct Stats compute_statistics(const float* numberset, int setlength) {
     }
     s.avarage = total/ setlength;
     
+    *maxarray = *numberset;
+    
     for (int j = 0; j < setlength; ++j )
         {
-            if (numberset[0] < numberset[j])
+            if (maxarray[0] < maxarray[j])
             {
-                numberset[0] = numberset[j];
+                maxarray[0] = maxarray[j];
             }
         }
-        s.max = numberset[0];
-    for (int k = 0; k < setlength; ++k )
+        s.max = maxarray[0];
+    *minarray = *numberset;
+    for (int k = 0; k < minarray; ++k )
         {
-            if (numberset[0] > numberset[k])
+            if (minarray[0] > minarray[k])
             {
-                numberset[0] = numberset[k];
+                minarray[0] = minarray[k];
             }
         }
-        s.min = numberset[0];
+        s.min = minarray[0];
 
         
 }
