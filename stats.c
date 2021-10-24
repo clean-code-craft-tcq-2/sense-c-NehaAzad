@@ -26,7 +26,7 @@ struct Stats compute_statistics(const float* numberset, int setlength) {
         }
         s.max = maxarray[0];
     *minarray = *numberset;
-    for (int k = 0; k < minarray; ++k )
+    for (int k = 0; k < setlength; ++k )
         {
             if (minarray[0] > minarray[k])
             {
